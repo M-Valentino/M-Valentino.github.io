@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Retro Calculator</title>
+	<link rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <input type="text" id="input" value="">
+<br>
+<button onclick="writeNum(1)">1</button><button onclick="writeNum(2)">2</button><button onclick="writeNum(3)">3</button>
+<br>
+<button onclick="writeNum(4)">4</button><button onclick="writeNum(5)">5</button><button onclick="writeNum(6)">6</button>
+<br>
+<button onclick="writeNum(7)">7</button><button onclick="writeNum(8)">8</button><button onclick="writeNum(9)">9</button>
+<br>
+<button onclick="writeNum(0)">0</button><button onclick="changeNegative()">-()</button><button onclick="writeNum(3.14159265358979)">π</button>
+<br>
+<button onclick="add()">+</button><button onclick="subtract()">-</button><button onclick="solve()">=</button>
+<br>
+
+<script>
+    var isPositive = true;
+    var operationType;
+    var numberInput;
+    var firstNumberInputted;
+    var secondNumberInputted;
+
+function writeNum(num) {
+    document.getElementById("input").value += num;
+}
+function getNumAndClear() {
+    firstNumberInputted = parseFloat(document.getElementById("input").value);
+    document.getElementById("input").value = '';
+}
+function changeNegative() {
+    if (isPositive) {
+        document.getElementById("input").value = "-" + document.getElementById("input").value;
+        isPositive = false;
+    } else {
+        document.getElementById("input").value = document.getElementById("input").value.substring(1);
+        isPositive = true;
+    }
+}
+function add() {
+    operationType = 0;
+    getNumAndClear();
+}
+function subtract() {
+    operationType = 1;
+    getNumAndClear();
+}
+function solve() {
+    secondNumberInputted = parseFloat(document.getElementById("input").value);
+
+    switch(operationType) {
+        case 0:
+            document.getElementById("input").value = firstNumberInputted + secondNumberInputted;
+            break;
+        case 1:
+            document.getElementById("input").value = firstNumberInputted - secondNumberInputted;
+            break;
+    } 
+}
+</script>
+
+</body>
+</html>
