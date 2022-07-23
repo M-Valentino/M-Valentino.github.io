@@ -1,6 +1,11 @@
 /*color pallete: f1e0cb, 744 */
 :root {
-    --printNoise: url('data:image/webp;base64,UklGRsACAABXRUJQVlA4ILQCAAAwDgCdASogACAAAAAAJZQC+doB+AF0EhtuMF2d/O/AHwc/B1ivup+R4QfckmDJmbqjzKPLn+k+ANMi/qv6l+5b+q/9X+2eZH5J/539p+AL+V/07/qf3TtAfrd7IX6nmyvFIKSM3wpW5eLK2jiWJDq16muqHMibGoL10AD+//4mKFbGHevZHK/7j76sz8k4fkfxPtqqYK0IxtHP6T3MHqIDcoiCdSqRoHx3DBvuXPeltTKgVEf+8K+KL6ItvM3dfXzDhqU/joswXQRPa27K5s2c8fS8WCwScCk7+GJEHYO5BXTgwfNnUgP0N2fCf7ptra6pbmb4d/T75SzBY+ClY//yDWlq1KbM9n/84jrSbV8+JH5xZGGe/57J9RF7sf+BNQFKmP5oj9QQsT1+jqrzmbUuDlH27b9IC0/X5afFvJ4LGoC4Nt3N1ZMA0bYrFibtoECGOd8YgnflrT7geLKf5YHzm9pxEIG0CsibZUDzILulJBDk5RpvNri7eL8ylgw9BrNiUNH6CcmL9MrqzY9xK0h+QfejAvB8l8QOnKgOtwglxXoGvU4SLU45qA7lY/CLr04SfLhac0jtRwljyb6lWQwecALEEJjXqzFykq9SwT1l2qcsmR77WsXIm4lW1X4ihM/xx5RGmi87CoHmNc2oTfs/kAY0Fu8gI7olw32ZNvXVbdUYR/1J0Ci7H2WNS7DBE6PUtXDROXrwlvys+1/I8WMfi534oBVfQQ9TzKXJdfGNX3RutHInIpAMwS4ikA7318P25Nw7NdpwkoTHrEbnNCwEeS5dfHVibkkFrl7lLhMj1r1zhtr0McyvoeuPSDQi+8AB1R5TSGRiCVz1cCwUnsax4nf/RtlgX4zCAXHeuqPI4l7AThCQwN9lC1riPDou77g4Xc1N4/sWlNRts0lQQbSs5wLAAA==');
+    --color0: #ffffff;
+    --color0-5: #f1f1f1;
+    --color1: #e0eff6;
+    --color2: #dc7628;
+    --color3: #8d4c1a;
+    --color4: #000000;
     --splinters: url('data:image/webp;base64,UklGRqIAAABXRUJQVlA4TJUAAAAv/8A/EGDYtm0k7r+8eq8jGEiSZDja692zjcEEwPw//8///2jZeFpMdOUYI6EeCM86KDZCeM6FPQqEFzzIzEB6nQDz//w//8//86Hs4+MplDi4dGClFJvZciBaEfbK5QB4s9cvpQPgTDD/z//z/7s0Y9TGM1JrPC9Vt2MQ5duxCEN7DrnzWePJSB1P62Hizf/z//zfFQA=');
 }
 body {
@@ -8,9 +13,9 @@ body {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: #f1e0cb;
-    background-image: url('data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAADQBACdASogACAAAAAAJZzww4DQkCsAfgBfTt4LbjvN93zWbC9AqdpK2X1LesZAAAD+/9duN1DrDfc0M+OpvkeI3jma22ig5HpoLpVRBk7H1WSYdB18FRCIdtv//9jN+jN+jN/YU9Fn//z0zXjuRf0qyAMXRxqD8vLNMPx0X6X6Nh+oyuyMD1oNgJvshConSteFQdmFSOwo+aYsTeGOsPHL+kpoJubGYrZ5tjgB7HlLCZLf3hZmYHTj6P/RkDqoqsojWr42iy20Mb+2DgR5uA3ThLkfywRhCKu8GBUSQUrx6mXEkBHO3KtOTv1RIbt3xuZlFFKWDgXcSe2xUAA=');
-    background-size: 16px;
+    background-color: var(--color1);
+    background-image: url('images/1024noise.webp');
+    background-size: 512px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .cards {
@@ -25,12 +30,13 @@ body {
     width: 360px;
     padding: 10px;
     margin: 10px;
-    background-image: var(--splinters), linear-gradient(0deg, #f8f6e4 0%, #faf9e6 100%);
+    background-color: var(--color0);
+    background-image:var(--splinters), linear-gradient(0deg, #00000005 0%, #00000000 100%);
     filter: brightness(96.5%);
     background-size: 128px;
     border-radius: 4px;
     border-style: solid;
-    border-color: #ccc2b2;
+    border-color: #cccccc;
     border-width: 0 0 1px 0;
     box-shadow: 0 0.4px 0.7px #4b000006, 0 1.1px 1.9px #4c000009, 0 2.7px 4.5px #4d00000c, 0 9px 15px #4e000012;
     z-index: 2;
@@ -88,6 +94,7 @@ body {
     padding-top: 4%;
     padding-bottom: 4%;
     font-size: 16px;
+    color: var(--color4);
 }
 .pTopBorder {
     margin: auto;
@@ -95,8 +102,7 @@ body {
     width: 90%;
     height: 4px;
     border-radius: 2px;
-    background-color: #744;
-    background-image: var(--printNoise);
+    background-color: var(--color2);
     background-size: 16px;
 }
 ul {
@@ -107,12 +113,12 @@ ul {
     margin-top: 0;
     max-height: 48px;
     padding: 6px;
-    background-color: #744;
-    background-image: linear-gradient(0deg, #0000001a 0%, #00000000 100%), url('images/leatherribbon.webp');
-    background-size: 640px;
+    background-color: var(--color2);
+    background-image: url('images/scratches.webp'), linear-gradient(0deg, #00000015 0%, #00000000 100%);
+    background-size: 512px;
     border-radius: 0 0 4px 0;
     border-style: solid;
-    border-color: #422;
+    border-color: var(--color3);
     border-width: 0 0 1px 0;
     box-shadow: 0px 0.5px 0.5px -0.5px #0000000e, 0px 1.1px 1.1px -0.5px #08000015, 0px 2.1px 2.1px -0.5px #1000001a, 0px 3.8px 3.8px -0.5px #1800001e, 0px 7.1px 7.1px -0.5px #20000025, 0px 17px 17px -0.5px #28000033;
     z-index: 5;
@@ -123,11 +129,11 @@ li {
 li a {
     font-size: 20px;
     padding: 12px;
-    color: #f1e0cb;
-    text-shadow: #382020 0 2px 3px, #281010 0 1px 1px;
+    color: var(--color0-5);
+    text-shadow: #05000025 0 2px 3px, #02000050 0 1px 1px;
 }
 li a:hover:not(.active) {
-    color: #ffffeb;
+    color: var(--color0);
 }
 .current {
     background: radial-gradient(ellipse at 50% 50%, #ffffeb60 0%, #ffffeb40 35%, #00000000 60%);
@@ -149,23 +155,19 @@ h1 {
     font-size: 32px;
     margin-top: 96px;
     text-align: center;
-    color: #744;
-    background: var(--printNoise);
-    background-size: 16px;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color2);
+    text-shadow: rgba(255, 255, 255, 0.9) 0px 0px 20px;
 }
 h2 {
     font-size: 26px;
     text-align: center;
+    color: var(--color4);
 }
 h3 {
     font-size: 18px;
     text-align: center;
-    background: var(--printNoise);
-    background-size: 16px;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color2);
+
 }
 .inset {
     text-align: center;
@@ -183,7 +185,7 @@ h3 {
 }
 a {
     text-decoration: none;
-    color:#744;
+    color:var(--color2);
 }
 ::selection {
     background: #faff0080;
@@ -208,10 +210,11 @@ a {
     }
     .card p {
         font-size: 14px;
+        color: var(--color4);
     }
     /*Background clipped text is not supported for Google Chrome on Android so h1 and h3 will be solid colored.*/
     h1 {
-        color:#744;
+        color:var(--color2);
         background: unset;
         background-size: unset;
         background-clip: unset;
@@ -220,9 +223,10 @@ a {
     }
     h2 {
         font-size: 15px;
+        color: var(--color4);
     }
     h3 {
-        color:#744;
+        color:var(--color2);
         background: unset;
         background-size: unset;
         background-clip: unset;
