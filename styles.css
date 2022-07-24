@@ -28,7 +28,7 @@ body {
 }
 .card {
     width: 360px;
-    padding: 10px;
+    padding: 12px;
     margin: 10px;
     background-color: var(--color0);
     background-image:var(--splinters), linear-gradient(0deg, #00000005 0%, #00000000 100%);
@@ -91,14 +91,27 @@ body {
     display: block;
     margin: auto;
     width: 90%;
-    padding-top: 4%;
-    padding-bottom: 4%;
+    padding-top: 8px;
     font-size: 16px;
-    color: var(--color4);
+}
+.language {
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    margin-top: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 16px;
+    height: 24px;
+    line-height: 24px;
+    background-color: var(--color2);
+    color: var(--color0);
 }
 .pTopBorder {
     margin: auto;
-    margin-top: 5%;
+    margin-top: 12px;
     width: 90%;
     height: 4px;
     border-radius: 2px;
@@ -167,7 +180,8 @@ h3 {
     font-size: 18px;
     text-align: center;
     color: var(--color2);
-
+    margin-bottom: 12px;
+    margin-top: 0;
 }
 .inset {
     text-align: center;
