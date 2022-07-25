@@ -202,7 +202,7 @@ a {
     color:var(--color2);
 }
 ::selection {
-    background: #faff0080;
+    background: #dc762880;
 }
 /*For targeting mobile phones.*/
 @media only screen and (max-width: 1000px) {
@@ -223,7 +223,7 @@ a {
         animation-name: none;
     }
     .card p {
-        font-size: 14px;
+        font-size: 15px;
         color: var(--color4);
     }
     /*Background clipped text is not supported for Google Chrome on Android so h1 and h3 will be solid colored.*/
@@ -236,7 +236,7 @@ a {
         font-size: 18px;
     }
     h2 {
-        font-size: 15px;
+        font-size: 17px;
         color: var(--color4);
     }
     h3 {
@@ -245,7 +245,7 @@ a {
         background-size: unset;
         background-clip: unset;
         -webkit-text-fill-color: unset;
-        font-size: 14px;
+        font-size: 16px;
     }
     ul {
         border-radius: 0;
@@ -263,6 +263,9 @@ a {
         letter-spacing: 24px;
         text-indent: 24px;
         text-align: center;
+    }
+    .inset {
+        display: none;
     }
 }
 @media only screen and (max-width: 340px) {
