@@ -237,15 +237,6 @@ a {
         font-size: 15px;
         color: var(--color4);
     }
-    /*Background clipped text is not supported for Google Chrome on Android so h1 and h3 will be solid colored.*/
-    h1 {
-        color:var(--color2);
-        background: unset;
-        background-size: unset;
-        background-clip: unset;
-        -webkit-text-fill-color: unset;
-        font-size: 18px;
-    }
     h2 {
         font-size: 17px;
         color: var(--color4);
