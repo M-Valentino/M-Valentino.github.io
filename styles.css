@@ -2,7 +2,7 @@
 :root {
     --color0: #ffffff;
     --color0-5: #f1f1f1;
-    --color1: #e0eff6;
+    --color1: #619bb7;
     --color2: #dc7628;
     --color3: #8d4c1a;
     --color4: #000000;
@@ -165,11 +165,22 @@ li a:hover:not(.active) {
     user-select: none;
 }
 h1 {
-    font-size: 32px;
-    margin-top: 96px;
+    font-size: 28px;
+    margin-top: 0;
     text-align: center;
-    color: var(--color2);
-    text-shadow: rgba(255, 255, 255, 0.9) 0px 0px 20px;
+    color: var(--color0);
+    filter: drop-shadow(0 0 4px #8b000024) drop-shadow(0 4px 1.5px #4b00002a) drop-shadow(0 2px 1px #2b00003a);
+    letter-spacing: 4px;
+    font-family: 'Azeret Mono';
+}
+.logo {
+    width: 380px;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    right: 34px;
+    filter: drop-shadow(0 0 4px #8b000024) drop-shadow(0 4px 1.5px #4b00002a) drop-shadow(0 2px 1px #2b00003a);
 }
 h2 {
     font-size: 26px;
