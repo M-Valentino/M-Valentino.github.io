@@ -6,10 +6,38 @@
 	<title>Retro Calculator</title>
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        input {
+            text-align: right;
+            background-color: #94b272;
+            border-style: none;
+            font-family: 'Press Start 2P';
+            text-shadow: 0 2px 1px #47380246, 0 2px 3px #110e002c;
+            color: #100020;
+            height: 48px;
+            font-size: 32px;
+            width: 256px;
+            z-index: -1;
+        }
+        .screen{
+            background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 48px;
+            width: 256px;
+            
+        }
+    </style>
 </head>
 
 <body>
+<div class="screen"></div>
     <input type="text" id="input" value="">
+
 <br>
 <button onclick="writeNum(1)">1</button><button onclick="writeNum(2)">2</button><button onclick="writeNum(3)">3</button>
 <br>
