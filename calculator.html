@@ -159,59 +159,60 @@
 				<br>
 				<div class="buttons">
 					<div class="buttonContainer">
-						<button onclick="writeNum(9)">9</button>
-						<div class="buttonDepth"></div>
-					</div>
-					<div class="buttonContainer">
-						<button onclick="writeNum(8)">8</button>
-						<div class="buttonDepth"></div>
-					</div>
-					<div class="buttonContainer">
 						<button onclick="writeNum(7)">7</button>
 						<div class="buttonDepth"></div>
 					</div>
-					<div class="buttonContainer">
-						<button onclick="writeNum(6)">6</button>
+          <div class="buttonContainer">
+						<button onclick="writeNum(8)">8</button>
 						<div class="buttonDepth"></div>
 					</div>
-					<div class="buttonContainer">
-						<button onclick="writeNum(5)">5</button>
+          <div class="buttonContainer">
+						<button onclick="writeNum(9)">9</button>
+						<div class="buttonDepth"></div>
+					</div>
+          <div class="buttonContainer">
+						<button onclick="add()">+</button>
 						<div class="buttonDepth"></div>
 					</div>
 					<div class="buttonContainer">
 						<button onclick="writeNum(4)">4</button>
 						<div class="buttonDepth"></div>
 					</div>
-					<div class="buttonContainer">
-						<button onclick="writeNum(3)">3</button>
+          <div class="buttonContainer">
+						<button onclick="writeNum(5)">5</button>
 						<div class="buttonDepth"></div>
 					</div>
-					<div class="buttonContainer">
-						<button onclick="writeNum(2)">2</button>
+          <div class="buttonContainer">
+						<button onclick="writeNum(6)">6</button>
+						<div class="buttonDepth"></div>
+					</div>
+          <div class="buttonContainer">
+						<button onclick="subtract()">-</button>
 						<div class="buttonDepth"></div>
 					</div>
 					<div class="buttonContainer">
 						<button onclick="writeNum(1)">1</button>
 						<div class="buttonDepth"></div>
 					</div>
-					<div class="buttonContainer">
-						<button onclick="writeNum(0)">0</button>
+          <div class="buttonContainer">
+						<button onclick="writeNum(2)">2</button>
 						<div class="buttonDepth"></div>
 					</div>
-					<div class="buttonContainer">
+          <div class="buttonContainer">
+						<button onclick="writeNum(3)">3</button>
+						<div class="buttonDepth"></div>
+					</div>
+          <div class="buttonContainer">
 						<button onclick="changeNegative()">-()</button>
 						<div class="buttonDepth"></div>
 					</div>
 					<div class="buttonContainer">
+						<button onclick="writeNum(0)">0</button>
+						<div class="buttonDepth"></div>
+					</div>
+				
+					<div class="buttonContainer">
 						<button onclick="writeNum(3.14159265358979)">π</button>
-						<div class="buttonDepth"></div>
-					</div>
-					<div class="buttonContainer">
-						<button onclick="add()">+</button>
-						<div class="buttonDepth"></div>
-					</div>
-					<div class="buttonContainer">
-						<button onclick="subtract()">-</button>
 						<div class="buttonDepth"></div>
 					</div>
 					<div class="buttonContainer">
@@ -230,7 +231,9 @@
 			var secondNumberInputted;
 
 			function writeNum(num) {
-				document.getElementById("input").value += num;
+        if (document.getElementById("input").value.length <= 7) {
+          document.getElementById("input").value += num;
+        }
 			}
 
 			function getNumAndClear() {
