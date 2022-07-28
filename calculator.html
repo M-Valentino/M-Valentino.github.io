@@ -1,137 +1,243 @@
 <!DOCTYPE HTML>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>Retro Calculator</title>
-	<link rel="stylesheet" href="styles.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8">
+    <title>Retro Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-        input {
-            text-align: right;
-            background-color: #94b272;
-            border-style: none;
-            font-family: 'Press Start 2P';
-            text-shadow: 0 2px 1px #47380246, 0 2px 3px #110e002c;
-            color: #100020;
-            height: 48px;
-            font-size: 32px;
-            width: 256px;
-            z-index: -1;
-            padding: 0;
-            margin: auto;
-            box-shadow: inset 0px 2px 3px 0px #000000c0;
-        }
-        .screenCover {
-            background-image: linear-gradient(45deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.25) 22%, rgba(255,255,255,0.25) 28%, rgba(255,255,255,0.10) 60%, rgba(0,0,0,0) 100%);
-            z-index: 1;
-            position: absolute;
-            top: 1;
-            margin: auto;
-            height: 48px;
-            width: 256px;
-        }
-        .screen {
-            margin: 0 auto;
-            display: block;
-            border: 4px solid;
-            border-top-color: #858585;
-            border-left-color: #a5a5a5;
-            border-right-color: #959595;
-            border-bottom-color: #a0a0a0;
-            width: 256px;
-            height: 48px;
-            padding: 0;
-        }
-        button {
-            width: 64px;
-            height: 48px;
-            margin: 2px;
-        }
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .calculator {
-            top: 64px;
-            position: relative;
-            margin: auto;
-            display: block;
-            width: 320px;
-            height: 640px;
-            border-radius: 8px;
-            background-color: #aaa;
-        }
+      input {
+        text-align: right;
+        background-color: #94b272;
+        border-style: none;
+        font-family: 'Press Start 2P';
+        text-shadow: 0 2px 1px #47380246, 0 2px 3px #110e002c;
+        color: #100020;
+        height: 48px;
+        font-size: 32px;
+        width: 256px;
+        z-index: -1;
+        padding: 0;
+        margin: auto;
+        box-shadow: inset 0px 2px 3px 0px #000000c0;
+      }
+
+      .screenCover {
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.25) 22%, rgba(255, 255, 255, 0.25) 28%, rgba(255, 255, 255, 0.10) 60%, rgba(0, 0, 0, 0) 100%);
+        z-index: 1;
+        position: absolute;
+        top: 1;
+        margin: auto;
+        height: 48px;
+        width: 256px;
+      }
+
+      .screen {
+        margin: 0 auto;
+        display: block;
+        border: 4px solid;
+        border-top-color: #858585;
+        border-left-color: #a5a5a5;
+        border-right-color: #959595;
+        border-bottom-color: #a0a0a0;
+        border-bottom-width: 2px;
+        width: 256px;
+        height: 48px;
+        padding: 0;
+      }
+
+      button {
+        width: 62px;
+        left: 1px;
+        bottom: 2px;
+        height: 48px;
+        border-radius: 2px;
+        border-style: none;
+        z-index: 5;
+        position: relative;
+        background-color: #eee;
+      }
+
+      .buttonContainer{
+        width: 64px;
+        height: 52px;
+        margin: 2px;
+        background-color: #777;
+        border-radius: 2px;
+      }
+      
+      .buttonDepth {
+        position: relative;
+        bottom: 4px;
+        left: 1px;
+        width: 62px;
+        height: 8px;
+        background-color: #ccc;
+        border-bottom-left-radius: 0.55px;
+        border-bottom-right-radius: 0.55px;
+        z-index: 3;
+      }
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        width: 264px;
+        margin: auto;
+      }
+
+      .calculatorContainer {
+        top: 64px;
+        position: relative;
+        margin: auto;
+        display: block;
+        width: 320px;
+      }
+
+      .calculatorTop {
+        padding-top: 4px;
+        border-radius: 8px;
+        background-color: #aaa;
+      }
+
+      .calculatorDepth {
+        position: relative;
+        bottom: 8px;
+        width: 320px;
+        height: 24px;
+        background-color: #999;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        z-index: -2;
+      }
+
+      .name {
+        margin-left: 32px;
+        font-size: 16px;
+      }
     </style>
-</head>
+  </head>
+  <body>
+    <div class="calculatorContainer">
+      <div class="calculatorTop">
+        <div class="name">Val-Calc 900</div>
+        <div class="screen">
+          <div class="screenCover"></div>
+          <input type="text" id="input" value="">
+        </div>
+        <div class="buttons">
+            <div class="buttonContainer">
+                <button onclick="writeNum(9)">9</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(8)">8</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(7)">7</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(6)">6</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(5)">5</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(4)">4</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(3)">3</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(2)">2</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(1)">1</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(0)">0</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="changeNegative()">-()</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="writeNum(3.14159265358979)">π</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="add()">+</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="subtract()">-</button>
+                <div class="buttonDepth"></div>
+            </div>
+            <div class="buttonContainer">
+                <button onclick="solve()">=</button>
+                <div class="buttonDepth"></div>
+            </div>
+        </div>
+      </div>
+      <div class="calculatorDepth"></div>
+    </div>
+    <script>
+      var isPositive = true;
+      var operationType;
+      var numberInput;
+      var firstNumberInputted;
+      var secondNumberInputted;
 
-<body>
-<div class="calculator">
-<div class="screen">
-    <div class="screenCover"></div>
-    <input type="text" id="input" value="">
-</div>
-<div class="buttons">
+      function writeNum(num) {
+        document.getElementById("input").value += num;
+      }
 
-<button onclick="writeNum(1)">1</button><button onclick="writeNum(2)">2</button><button onclick="writeNum(3)">3</button>
+      function getNumAndClear() {
+        firstNumberInputted = parseFloat(document.getElementById("input").value);
+        document.getElementById("input").value = '';
+      }
 
-<button onclick="writeNum(4)">4</button><button onclick="writeNum(5)">5</button><button onclick="writeNum(6)">6</button>
+      function changeNegative() {
+        if (isPositive) {
+          document.getElementById("input").value = "-" + document.getElementById("input").value;
+          isPositive = false;
+        } else {
+          document.getElementById("input").value = document.getElementById("input").value.substring(1);
+          isPositive = true;
+        }
+      }
 
-<button onclick="writeNum(7)">7</button><button onclick="writeNum(8)">8</button><button onclick="writeNum(9)">9</button>
+      function add() {
+        operationType = 0;
+        getNumAndClear();
+      }
 
-<button onclick="writeNum(0)">0</button><button onclick="changeNegative()">-()</button><button onclick="writeNum(3.14159265358979)">π</button>
+      function subtract() {
+        operationType = 1;
+        getNumAndClear();
+      }
 
-<button onclick="add()">+</button><button onclick="subtract()">-</button><button onclick="solve()">=</button>
-
-</div>
-</div>
-
-<script>
-    var isPositive = true;
-    var operationType;
-    var numberInput;
-    var firstNumberInputted;
-    var secondNumberInputted;
-
-function writeNum(num) {
-    document.getElementById("input").value += num;
-}
-function getNumAndClear() {
-    firstNumberInputted = parseFloat(document.getElementById("input").value);
-    document.getElementById("input").value = '';
-}
-function changeNegative() {
-    if (isPositive) {
-        document.getElementById("input").value = "-" + document.getElementById("input").value;
-        isPositive = false;
-    } else {
-        document.getElementById("input").value = document.getElementById("input").value.substring(1);
-        isPositive = true;
-    }
-}
-function add() {
-    operationType = 0;
-    getNumAndClear();
-}
-function subtract() {
-    operationType = 1;
-    getNumAndClear();
-}
-function solve() {
-    secondNumberInputted = parseFloat(document.getElementById("input").value);
-
-    switch(operationType) {
-        case 0:
+      function solve() {
+        secondNumberInputted = parseFloat(document.getElementById("input").value);
+        switch (operationType) {
+          case 0:
             document.getElementById("input").value = firstNumberInputted + secondNumberInputted;
             break;
-        case 1:
+          case 1:
             document.getElementById("input").value = firstNumberInputted - secondNumberInputted;
             break;
-    } 
-}
-</script>
-
-</body>
+        }
+      }
+    </script>
+  </body>
 </html>
