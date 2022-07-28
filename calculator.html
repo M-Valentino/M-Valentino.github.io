@@ -20,35 +20,73 @@
             font-size: 32px;
             width: 256px;
             z-index: -1;
+            padding: 0;
+            margin: auto;
+            box-shadow: inset 0px 2px 3px 0px #000000c0;
         }
-        .screen{
-            background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        .screenCover {
+            background-image: linear-gradient(45deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.25) 22%, rgba(255,255,255,0.25) 28%, rgba(255,255,255,0.10) 60%, rgba(0,0,0,0) 100%);
             z-index: 1;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 1;
+            margin: auto;
             height: 48px;
             width: 256px;
-            
+        }
+        .screen {
+            margin: 0 auto;
+            display: block;
+            border: 4px solid;
+            border-top-color: #858585;
+            border-left-color: #a5a5a5;
+            border-right-color: #959595;
+            border-bottom-color: #a0a0a0;
+            width: 256px;
+            height: 48px;
+            padding: 0;
+        }
+        button {
+            width: 64px;
+            height: 48px;
+            margin: 2px;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .calculator {
+            top: 64px;
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 320px;
+            height: 640px;
+            border-radius: 8px;
+            background-color: #aaa;
         }
     </style>
 </head>
 
 <body>
-<div class="screen"></div>
+<div class="calculator">
+<div class="screen">
+    <div class="screenCover"></div>
     <input type="text" id="input" value="">
+</div>
+<div class="buttons">
 
-<br>
 <button onclick="writeNum(1)">1</button><button onclick="writeNum(2)">2</button><button onclick="writeNum(3)">3</button>
-<br>
+
 <button onclick="writeNum(4)">4</button><button onclick="writeNum(5)">5</button><button onclick="writeNum(6)">6</button>
-<br>
+
 <button onclick="writeNum(7)">7</button><button onclick="writeNum(8)">8</button><button onclick="writeNum(9)">9</button>
-<br>
+
 <button onclick="writeNum(0)">0</button><button onclick="changeNegative()">-()</button><button onclick="writeNum(3.14159265358979)">π</button>
-<br>
+
 <button onclick="add()">+</button><button onclick="subtract()">-</button><button onclick="solve()">=</button>
-<br>
+
+</div>
+</div>
 
 <script>
     var isPositive = true;
