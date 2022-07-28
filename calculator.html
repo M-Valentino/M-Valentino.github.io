@@ -49,8 +49,8 @@
       }
 
       button {
-        width: 62px;
-        left: 1px;
+        width: 62.5px;
+        left: 0.5px;
         bottom: 2px;
         height: 48px;
         border-radius: 2px;
@@ -58,26 +58,32 @@
         z-index: 5;
         position: relative;
         background-color: #eee;
+        box-shadow: 0px -2px 2px 0px rgba(0,0,0,0.1), 0px -0.5px 1px 0px rgba(0,0,0,0.15);;
       }
 
       .buttonContainer{
-        width: 64px;
+        width: 63.5px;
         height: 52px;
-        margin: 2px;
-        background-color: #777;
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-top: 0;
+        background-color: #555;
         border-radius: 2px;
+        box-shadow: 0 0 3px 1px #00000025, 0px 0px 0.5px 0.5px #55555580;
       }
       
       .buttonDepth {
         position: relative;
         bottom: 4px;
-        left: 1px;
-        width: 62px;
+        left: 0.5px;
+        width: 62.5px;
         height: 8px;
         background-color: #ccc;
-        border-bottom-left-radius: 0.55px;
-        border-bottom-right-radius: 0.55px;
+        background-image: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 2%, rgba(0,0,0,0) 98%, rgba(0,0,0,0.2) 100%);
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
         z-index: 3;
+        box-shadow: 0 5px 0.75px 0 rgba(0,0,0,0.10);
       }
 
       .buttons {
@@ -97,6 +103,7 @@
 
       .calculatorTop {
         padding-top: 4px;
+        padding-bottom: 16px;
         border-radius: 8px;
         background-color: #aaa;
       }
@@ -126,6 +133,7 @@
           <div class="screenCover"></div>
           <input type="text" id="input" value="">
         </div>
+        <br>
         <div class="buttons">
             <div class="buttonContainer">
                 <button onclick="writeNum(9)">9</button>
