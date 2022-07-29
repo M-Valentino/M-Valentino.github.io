@@ -210,7 +210,10 @@
 						<button onclick="writeNum(0)">0</button>
 						<div class="buttonDepth"></div>
 					</div>
-				
+					<div class="buttonContainer">
+						<button onclick="writeDecimal()">.</button>
+						<div class="buttonDepth"></div>
+					</div>
 					<div class="buttonContainer">
 						<button onclick="writeNum(3.14159265358979)">π</button>
 						<div class="buttonDepth"></div>
@@ -241,6 +244,7 @@
 		</div>
 		<script>
 			var isPositive = true;
+			var noDecimal = true;
 			var operationType;
 			var numberInput;
 			var firstNumberInputted;
@@ -255,10 +259,12 @@
 			function getNumAndClear() {
 				firstNumberInputted = parseFloat(document.getElementById("input").value);
 				document.getElementById("input").value = '';
+				noDecimal = true;
 			}
 
 			function clearInput() {
 				document.getElementById("input").value = '';
+				noDecimal = true;
 			}
 
 			function changeNegative() {
@@ -268,6 +274,13 @@
 				} else {
 					document.getElementById("input").value = document.getElementById("input").value.substring(1);
 					isPositive = true;
+				}
+			}
+
+			function writeDecimal() {
+				if (noDecimal && document.getElementById("input").value.length <= 6) {
+          			document.getElementById("input").value += ".";
+        			noDecimal = false;
 				}
 			}
 
