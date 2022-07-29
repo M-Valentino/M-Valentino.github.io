@@ -219,6 +219,18 @@
 						<button onclick="solve()">=</button>
 						<div class="buttonDepth"></div>
 					</div>
+					<div class="buttonContainer">
+						<button onclick="multiply()">X</button>
+						<div class="buttonDepth"></div>
+					</div>
+					<div class="buttonContainer">
+						<button onclick="divide()">÷</button>
+						<div class="buttonDepth"></div>
+					</div>
+					<div class="buttonContainer">
+						<button onclick="root()">ˣ√</button>
+						<div class="buttonDepth"></div>
+					</div>
 				</div>
 			</div>
 			<div class="calculatorDepth"></div>
@@ -261,6 +273,21 @@
 				getNumAndClear();
 			}
 
+			function multiply() {
+				operationType = 2;
+				getNumAndClear();
+			}
+
+			function divide() {
+				operationType = 3;
+				getNumAndClear();
+			}
+
+			function root() {
+				operationType = 4;
+				getNumAndClear();
+			}
+
 			function solve() {
 				secondNumberInputted = parseFloat(document.getElementById("input").value);
 				switch (operationType) {
@@ -269,6 +296,15 @@
 						break;
 					case 1:
 						document.getElementById("input").value = firstNumberInputted - secondNumberInputted;
+						break;
+					case 2:
+						document.getElementById("input").value = firstNumberInputted * secondNumberInputted;
+						break;
+					case 3:
+						document.getElementById("input").value = firstNumberInputted / secondNumberInputted;
+						break;
+					case 4:
+						document.getElementById("input").value = Math.pow(firstNumberInputted, 1/secondNumberInputted); //fix
 						break;
 				}
 			}
