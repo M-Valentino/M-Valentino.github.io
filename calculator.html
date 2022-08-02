@@ -56,20 +56,26 @@
 				position: relative;
 				background-color: #eee;
 				color: #151117;
-				box-shadow: 0 -2px 2px 0px rgba(0, 0, 0, 0.1), 0 -0.5px 1px 0 rgba(0, 0, 0, 0.15), inset 0px 9px 8px -2px rgba(255,255,255,0.9), inset 0px -1px 8px 0px rgba(0,0,0,0.08);
+				box-shadow: 0 -2px 2px 0px rgba(0, 0, 0, 0.1), 0 -0.5px 1px 0 rgba(0, 0, 0, 0.15), inset 0px 9px 8px -2px rgba(255,255,255,0.3), inset 0px -1px 8px 0px rgba(0,0,0,0.08);
 				font-size: 32px;
 				text-shadow: 0 0.25px #00000020, 0 0.5px 3px #00000030;
-				background-image: url('images/fingerprint.webp');
 				background-repeat: no-repeat;
 				background-size: 40px;
 				background-position: center;
                 font-stretch: 108%;
 				--depth: 2px;
+				text-rendering: geometricPrecision;
+			}
+			.blueButton {
+				background-color: #cfcfee;
 			}
 			button:active {
 				transform: translateY(var(--depth));
 				box-shadow: 0 -1.25px 2px 0px rgba(0, 0, 0, 0.1), 0 -0.5px 0.5px 0 rgba(0, 0, 0, 0.15);
 				background-color: #eaeaea;
+			}
+			.blueButton:active {
+				background-color: #c9c9ea;
 			}
 			button:hover {
 				cursor: pointer;
@@ -91,6 +97,19 @@
 				width: 62.5px;
 				height: 8px;
 				background-color: #eee;
+				background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0) 98%, rgba(0, 0, 0, 0.2) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.25) 9%, rgba(0, 0, 0, 0) 100%), radial-gradient(at top center,rgba(0,0,0,0) 75%, rgba(0,0,0,0.08) 95%);
+				border-bottom-left-radius: 1px;
+				border-bottom-right-radius: 1px;
+				z-index: 3;
+				box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.08);
+			}
+			.blueButtonDepth {
+				position: relative;
+				bottom: 4px;
+				left: 0.5px;
+				width: 62.5px;
+				height: 8px;
+				background-color: #cfcfee;
 				background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0) 98%, rgba(0, 0, 0, 0.2) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.25) 9%, rgba(0, 0, 0, 0) 100%), radial-gradient(at top center,rgba(0,0,0,0) 75%, rgba(0,0,0,0.08) 95%);
 				border-bottom-left-radius: 1px;
 				border-bottom-right-radius: 1px;
@@ -123,6 +142,8 @@
                 top: 8px;
                 left: 10px;
 				background-color: #aaa;
+				box-shadow: inset 0px 0px 5px 3px #aaa;
+				background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
 			}
             .calculatorTop {
                 position: absolute;
@@ -209,13 +230,16 @@
 				width: 320px;
 				height: 30px;
 				background-color: #929292;
+				box-shadow: inset 0px -4px 4px -2px rgba(0,0,0,0.3);
 				background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 0) 97%, rgba(0, 0, 0, 0.1) 100%), radial-gradient(at top center,rgba(0,0,0,0) 75%, rgba(0,0,0,0.08) 95%);
 			}
 			.name {
+				font-family: 'Times New Roman', Times, serif;
 				margin-left: 32px;
 				font-size: 16px;
 				color: #00000090;
 				text-shadow: 0 0.25px #00000020, 0 0.5px 3px #00000020;
+				text-rendering: geometricPrecision;
 			}
 		</style>
 	</head>
@@ -251,8 +275,8 @@
 						<div class="buttonDepth"></div>
 					</div>
           			<div class="buttonContainer">
-						<button onclick="add()">+</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="add()">+</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
 						<button onclick="writeNum(4)">4</button>
@@ -267,8 +291,8 @@
 						<div class="buttonDepth"></div>
 					</div>
           			<div class="buttonContainer">
-						<button onclick="subtract()">-</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="subtract()">-</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
 						<button onclick="writeNum(1)">1</button>
@@ -283,8 +307,8 @@
 						<div class="buttonDepth"></div>
 					</div>
           			<div class="buttonContainer">
-						<button onclick="changeNegative()">-()</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="changeNegative()">-()</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
 						<button onclick="writeNum(0)">0</button>
@@ -299,24 +323,24 @@
 						<div class="buttonDepth"></div>
 					</div>
 					<div class="buttonContainer">
-						<button onclick="solve()">=</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="solve()">=</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
-						<button onclick="multiply()">X</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="multiply()">X</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
-						<button onclick="divide()">÷</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="divide()">÷</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
-						<button onclick="root()">ˣ√</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="root()">ˣ√</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
-						<button onclick="clearInput()">CE</button>
-						<div class="buttonDepth"></div>
+						<button class="blueButton" onclick="clearInput()">CE</button>
+						<div class="blueButtonDepth"></div>
 					</div>
 				</div>
 			</div>
