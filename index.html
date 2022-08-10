@@ -17,14 +17,14 @@
 		<li><a href="projects.html">Projects</a></li>
 		<li><a href="portfolio.html">Portfolio</a></li>
 		<li><a href="blog.html">Blog</a></li>
-		<li><a href="https://github.com/M-Valentino"><div class="desktopIcons" aria-description="Github icon">~</div></a></li>
-		<li><a href="https://github.com/M-Valentino"><div class="desktopIcons" aria-description="Linkedin icon">}</div></a></li>
+		<li><a href="https://github.com/M-Valentino"><div id="desktopIcons" aria-description="Github icon">~</div></a></li>
+		<li><a href="https://www.linkedin.com/in/mark-valentino"><div id="desktopIcons" aria-description="Linkedin icon">}</div></a></li>
 	</ul>
 
-	<img class="logo" src ="images/m-valentino_logo.svg">
+	<img id="logo" src ="images/m-valentino_logo.svg">
 	
-	<div class ="mobileIcons">
-		<a href="https://github.com/M-Valentino">~<a href="https://github.com/M-Valentino"></a> <a href="https://github.com/M-Valentino">}</a>
+	<div id="mobileIcons">
+		<a href="https://github.com/M-Valentino">~<a href="https://github.com/M-Valentino"></a> <a href="https://www.linkedin.com/in/mark-valentino">}</a>
 	</div>
 	<h2>Featured Projects</h2>
 	<div class="cards">
@@ -34,10 +34,41 @@
 			<p>I wrote an AI program to determine the best American cities to live in that are Pareto optimized between being safe and having favorable economic conditions (low cost of living and high median income). Machine learning was used to estimate unknown cost of living values of cities. Over 2000 cities were looked at.</p>
 			<div class="language">Python, Java</p>
 		</section>
+		<section class="card"> <a href="/calculator.html"><h3>Retro Calculator</h3></a>
+			<a href="/calculator.html"><img src="images/calculator.jpg" alt="Picture of realistic looking old calculator."></a>
+			<div class="pTopBorder"></div>
+			<p>I wrote an AI program to determine the best American cities to live in that are Pareto optimized between being safe and having favorable economic conditions (low cost of living and high median income). Machine learning was used to estimate unknown cost of living values of cities. Over 2000 cities were looked at.</p>
+			<div class="language">JS, CSS, HTML</p>
+		</section>
 		
 	</div>
 	<br>
-	<p class="inset">Design by Mark Valentino. Created in 2022.</p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	</body>
+
+	<script>
+		window.onscroll = function() {shrinkLogo()};
+		function shrinkLogo() {
+		  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+			document.getElementById("logo").style.width = "200px";
+			document.getElementById("logo").style.right = "17.9px";
+			document.getElementById("logo").style.marginTop = "72px";
+		  } else {
+			document.getElementById("logo").style.width = "380px";
+			document.getElementById("logo").style.right = "34px";
+			document.getElementById("logo").style.marginTop = "24px";
+		  }
+		}
+	</script>
 
 </html>

@@ -70,7 +70,7 @@
 				background-color: #cfcfee;
 			}
 			button:active {
-				transform: translateY(let(--depth));
+				transform: translateY(var(--depth));
 				box-shadow: 0 -1.25px 2px 0 #0000001a, 0 -0.5px 0.5px 0 #00000026;
 				background-color: #eaeaea;
 			}
@@ -274,8 +274,8 @@
 						<button onclick="writeNum(9)">9</button>
 						<div class="buttonDepth"></div>
 					</div>
-          			<div class="buttonContainer">
-						<button class="blueButton" onclick="add()">+</button>
+					<div class="buttonContainer">
+						<button class="blueButton" onclick="clearInput()">CE</button>
 						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
@@ -290,8 +290,8 @@
 						<button onclick="writeNum(6)">6</button>
 						<div class="buttonDepth"></div>
 					</div>
-          			<div class="buttonContainer">
-						<button class="blueButton" onclick="subtract()">-</button>
+					<div class="buttonContainer">
+						<button class="blueButton" onclick="divide()">÷</button>
 						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
@@ -306,8 +306,8 @@
 						<button onclick="writeNum(3)">3</button>
 						<div class="buttonDepth"></div>
 					</div>
-          			<div class="buttonContainer">
-						<button class="blueButton" onclick="changeNegative()">-()</button>
+					<div class="buttonContainer">
+						<button class="blueButton" onclick="multiply()">X</button>
 						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
@@ -319,27 +319,27 @@
 						<div class="buttonDepth"></div>
 					</div>
 					<div class="buttonContainer">
-						<button onclick="writeNum(3.14159265358979)">π</button>
+						<button onclick="writeNum(3.141593)">π</button>
 						<div class="buttonDepth"></div>
-					</div>
-					<div class="buttonContainer">
-						<button class="blueButton" onclick="solve()">=</button>
-						<div class="blueButtonDepth"></div>
-					</div>
-					<div class="buttonContainer">
-						<button class="blueButton" onclick="multiply()">X</button>
-						<div class="blueButtonDepth"></div>
-					</div>
-					<div class="buttonContainer">
-						<button class="blueButton" onclick="divide()">÷</button>
-						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
 						<button class="blueButton" onclick="root()">ˣ√</button>
 						<div class="blueButtonDepth"></div>
 					</div>
 					<div class="buttonContainer">
-						<button class="blueButton" onclick="clearInput()">CE</button>
+						<button class="blueButton" onclick="changeNegative()">-()</button>
+						<div class="blueButtonDepth"></div>
+					</div>
+					<div class="buttonContainer">
+						<button class="blueButton" onclick="subtract()">-</button>
+						<div class="blueButtonDepth"></div>
+					</div>
+					<div class="buttonContainer">
+						<button class="blueButton" onclick="add()">+</button>
+						<div class="blueButtonDepth"></div>
+					</div>
+					<div class="buttonContainer">
+						<button class="blueButton" onclick="solve()">=</button>
 						<div class="blueButtonDepth"></div>
 					</div>
 				</div>
@@ -347,7 +347,6 @@
 			
 		</div>
 		<script>
-			let isPositive = true;
 			let noDecimal = true;
 			let operationType;
 			let numberInput;
@@ -372,12 +371,10 @@
 			}
 
 			function changeNegative() {
-				if (isPositive) {
+				if (document.getElementById("input").value > 0) {
 					document.getElementById("input").value = "-" + document.getElementById("input").value;
-					isPositive = false;
 				} else {
 					document.getElementById("input").value = document.getElementById("input").value.substring(1);
-					isPositive = true;
 				}
 			}
 
