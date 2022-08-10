@@ -59,7 +59,7 @@
 	<script>
 		window.onscroll = function() {shrinkLogo()};
 		function shrinkLogo() {
-		  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+		  if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1000 && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)) {
 			document.getElementById("logo").style.width = "200px";
 			document.getElementById("logo").style.right = "17.9px";
 			document.getElementById("logo").style.marginTop = "72px";
