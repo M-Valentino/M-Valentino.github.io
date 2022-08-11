@@ -22,6 +22,10 @@
 	</ul>
 
 	<img id="logo" src ="images/m-valentino_logo.svg">
+	<div class="marquees">
+		<marquee id="languages" behavior="scroll" direction="right" scrollamount="12"></marquee>
+		<marquee id="phrase" behavior="scroll" direction="left" scrollamount="12"></marquee>
+	</div>
 	
 	<div id="mobileIcons">
 		<a href="https://github.com/M-Valentino">~<a href="https://github.com/M-Valentino"></a> <a href="https://www.linkedin.com/in/mark-valentino">}</a>
@@ -57,17 +61,26 @@
 	</body>
 
 	<script>
-		window.onscroll = function() {shrinkLogo()};
-		function shrinkLogo() {
-		  if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1000 && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)) {
-			document.getElementById("logo").style.width = "200px";
-			document.getElementById("logo").style.right = "17.9px";
-			document.getElementById("logo").style.marginTop = "72px";
-		  } else {
-			document.getElementById("logo").style.width = "380px";
-			document.getElementById("logo").style.right = "34px";
-			document.getElementById("logo").style.marginTop = "24px";
-		  }
+		let languagesText = " C C++ CSS HTML Java JavaScript Python";
+		document.getElementById('languages').innerText = languagesText.repeat(99);
+		let phraseText = " I'm growing my knowledge in n! time!";
+		document.getElementById('phrase').innerText = phraseText.repeat(99);
+		window.onscroll = function() {shrinkLogoFadeMarquees()};
+		function shrinkLogoFadeMarquees() {
+			// Function is disabled on mobile sized screens.
+			if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1000 && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)) {
+				document.getElementById("logo").style.width = "200px";
+				document.getElementById("logo").style.right = "17.9px";
+				document.getElementById("logo").style.marginTop = "72px";
+				document.getElementById("languages").style.color = "#00000000";
+				document.getElementById("phrase").style.color = "#00000000";
+			} else {
+				document.getElementById("logo").style.width = "380px";
+				document.getElementById("logo").style.right = "34px";
+				document.getElementById("logo").style.marginTop = "24px";
+				document.getElementById("languages").style.color = "#00000060";
+				document.getElementById("phrase").style.color = "#00000060";
+			}
 		}
 	</script>
 

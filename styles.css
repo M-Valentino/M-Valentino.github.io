@@ -180,6 +180,17 @@ li a:hover:not(.active) {
     filter: drop-shadow(0 0 4px #00000024) drop-shadow(0 4px 1.5px #0000002a) drop-shadow(0 2px 1px #0000003a);
     transition: 0.25s;
 }
+.marquees {
+    position: fixed;
+    top: 96px;
+    z-index: -2;
+}
+marquee {
+    font-size: 60px;
+    color: #00000060;
+    word-spacing: 40px;
+    transition: 0.25s;
+}
 h2 {
     font-size: 26px;
     text-align: center;
@@ -251,6 +262,9 @@ a {
         letter-spacing: 24px;
         text-indent: 24px;
         text-align: center;
+    }
+    marquee {
+        display: none;
     }
 }
 @media only screen and (max-width: 340px) {
