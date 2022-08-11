@@ -122,7 +122,6 @@ body {
     background-color: var(--color2);
     background-size: 16px;
     box-shadow: var(--smallShadow);
-    
 }
 ul {
     overflow: hidden;
