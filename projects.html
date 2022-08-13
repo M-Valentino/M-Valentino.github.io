@@ -13,23 +13,17 @@
 
 <body>
 	<ul>
-		<li><a href="index.html" class="current">Home</a></li>
-		<li><a href="projects.html">Projects</a></li>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="projects.html" class="current">Projects</a></li>
 		<li><a href="portfolio.html">Portfolio</a></li>
 		<li><a href="blog.html">Blog</a></li>
 		<li><a href="https://github.com/M-Valentino"><div id="desktopIcons" aria-description="Github icon">~</div></a></li>
 		<li><a href="https://www.linkedin.com/in/mark-valentino"><div id="desktopIcons" aria-description="Linkedin icon">}</div></a></li>
 	</ul>
-	<img id="logo" src ="images/m-valentino_logo.svg">
-	<div class="marquees">
-		<marquee id="languages" behavior="scroll" direction="right" scrollamount="12"></marquee>
-		<marquee id="phrase" behavior="scroll" direction="left" scrollamount="12"></marquee>
-	</div>
 	<div id="mobileIcons">
 		<a href="https://github.com/M-Valentino">~<a href="https://github.com/M-Valentino"></a> <a href="https://www.linkedin.com/in/mark-valentino">}</a>
 	</div>
-	<div class="mainText"><p>Hi, I'm Mark Valentino, and I am a senior computer science student at the University of South Carolina. I have a knack for AI and web development. I strongly believe that is possible to create anything with programming. That's why I entered this field.</p></div>
-	<h2>Featured Projects</h2>
+	<h2>All Projects</h2>
 	<div class="cards">
 		<section class="card"> <a href="https://github.com/M-Valentino/Cities-Recommender"><h3>Cities Recommender</h3></a>
 			<a href="https://github.com/M-Valentino/Cities-Recommender"><img src="images/citiesrecommender.png" alt="Collage of a table and graphs relating to city data."></a>
@@ -37,50 +31,20 @@
 			<p>I wrote an AI program to recommend the best cities in America to live in. Cities were optimized between being safe and having favorable economic conditions (low cost of living and high median income). Machine learning was used to estimate unknown cost of living values of cities. Over 2000 cities were looked at.</p>
 			<div class="language">Python, Java</p>
 		</section>
+        <section class="card"> <a href="https://github.com/M-Valentino/Software-Engineering-Design-Patterns"><h3>Design Patterns</h3></a>
+			<a href="https://github.com/M-Valentino/Software-Engineering-Design-Patterns"><img src="images/uml.png" alt="UML of a Factory design pattern."></a>
+			<div class="pTopBorder"></div>
+			<p>I created multiple Java programs based off of UMLs employing different design patterns. The patterns include: Decorator, Factory, Observer, and Strategy. This code was submitted for my software engineeering class.</p><br><br>
+			<div class="language">Java</p>
+		</section>
 		<section class="card"> <a href="calculator.html"><h3>Retro Calculator</h3></a>
 			<a href="calculator.html"><img src="images/calculator.jpg" alt="Picture of realistic looking old calculator."></a>
 			<div class="pTopBorder"></div>
 			<p>A functional recreation of an old school style calculator was made. I pushed CSS to the limit to make the calculator photorealistic. Vector images were not used as I wanted to make the calculator easier to be built upon in the future. The entire webpage is very small and takes up 14Kb.</p><br>
 			<div class="language">JS, CSS, HTML</p>
 		</section>
-		
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	</body>
 
-	<script>
-		let languagesText = " Bash C C++ CSS HTML Java JavaScript Kotlin Python";
-		document.getElementById('languages').innerText = languagesText.repeat(99);
-		let phraseText = " React-Native Android Studio Jupyter Notebook VS Code Eclipse";
-		document.getElementById('phrase').innerText = phraseText.repeat(99);
-		window.onscroll = function() {shrinkLogoFadeMarquees()};
-		function shrinkLogoFadeMarquees() {
-			// Function is disabled on mobile sized screens.
-			if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1000 && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)) {
-				document.getElementById("logo").style.width = "200px";
-				document.getElementById("logo").style.right = "17.9px";
-				document.getElementById("logo").style.marginTop = "72px";
-				document.getElementById("languages").style.color = "#00000000";
-				document.getElementById("phrase").style.color = "#00000000";
-			} else {
-				document.getElementById("logo").style.width = "380px";
-				document.getElementById("logo").style.right = "34px";
-				document.getElementById("logo").style.marginTop = "48px";
-				document.getElementById("languages").style.color = "#00000060";
-				document.getElementById("phrase").style.color = "#00000060";
-			}
-		}
-	</script>
+	</body>
 
 </html>
