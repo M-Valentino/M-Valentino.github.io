@@ -67,18 +67,20 @@
 		window.onscroll = function() {shrinkLogoFadeMarquees()};
 		function shrinkLogoFadeMarquees() {
 			// Function is disabled on mobile sized screens.
-			if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1000 && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)) {
-				document.getElementById("logo").style.width = "200px";
-				document.getElementById("logo").style.right = "17.9px";
-				document.getElementById("logo").style.marginTop = "72px";
-				document.getElementById("languages").style.color = "#00000000";
-				document.getElementById("phrase").style.color = "#00000000";
-			} else {
-				document.getElementById("logo").style.width = "380px";
-				document.getElementById("logo").style.right = "34px";
-				document.getElementById("logo").style.marginTop = "48px";
-				document.getElementById("languages").style.color = "#00000060";
-				document.getElementById("phrase").style.color = "#00000060";
+			if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1000) {
+				if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+					document.getElementById("logo").style.width = "200px";
+					document.getElementById("logo").style.right = "17.9px";
+					document.getElementById("logo").style.marginTop = "72px";
+					document.getElementById("languages").style.color = "#00000000";
+					document.getElementById("phrase").style.color = "#00000000";
+				} else {
+					document.getElementById("logo").style.width = "380px";
+					document.getElementById("logo").style.right = "34px";
+					document.getElementById("logo").style.marginTop = "48px";
+					document.getElementById("languages").style.color = "#00000060";
+					document.getElementById("phrase").style.color = "#00000060";
+			}
 			}
 		}
 	</script>

@@ -264,7 +264,7 @@ a {
         color: var(--color4);
     }
     h2 {
-        font-size: 17px;
+        font-size: 20px;
         color: var(--color4);
     }
     h3 {
@@ -273,7 +273,7 @@ a {
         background-size: unset;
         background-clip: unset;
         -webkit-text-fill-color: unset;
-        font-size: 16px;
+        font-size: 17px;
     }
     ul {
         border-radius: 0;
@@ -292,19 +292,21 @@ a {
         text-indent: 24px;
         text-align: center;
         margin-top: 24px;
+        text-shadow: var(--smallShadow);
     }
     .marquees {
         display: none;
     }
     #logo {
-        width: 95%;
+        width: 85%;
         margin: auto;
         margin-top: 48px;
         left: -24px;
     }
     .mainText {
-        width: 90%;
+        width: calc(100% - 40px);
         background-size: 196px;
+        font-size: 16px;
     }
 }
 @media only screen and (max-width: 340px) {
