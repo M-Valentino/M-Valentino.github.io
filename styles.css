@@ -296,6 +296,16 @@ a {
     .marquees {
         display: none;
     }
+    #logo {
+        width: 95%;
+        margin: auto;
+        margin-top: 48px;
+        left: -24px;
+    }
+    .mainText {
+        width: 90%;
+        background-size: 196px;
+    }
 }
 @media only screen and (max-width: 340px) {
     li a {
