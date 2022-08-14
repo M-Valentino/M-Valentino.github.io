@@ -1,11 +1,11 @@
 /*color pallete: f1e0cb, 744 */
 :root {
-    --color0: #ffffff;
+    --color0: #fff;
     --color0-5: #f1f1f1;
     --color1: #6183b7;
     --color2: #dc7628;
     --color3: #8d4c1a;
-    --color4: #000000;
+    --color4: #000;
     --splinters: url('data:image/webp;base64,UklGRqIAAABXRUJQVlA4TJUAAAAv/8A/EGDYtm0k7r+8eq8jGEiSZDja692zjcEEwPw//8///2jZeFpMdOUYI6EeCM86KDZCeM6FPQqEFzzIzEB6nQDz//w//8//86Hs4+MplDi4dGClFJvZciBaEfbK5QB4s9cvpQPgTDD/z//z/7s0Y9TGM1JrPC9Vt2MQ5duxCEN7DrnzWePJSB1P62Hizf/z//zfFQA=');
     --smallShadow: 0 0.25px #00000020, 0 0.5px 3px #00000020;
 }
@@ -37,7 +37,7 @@ body {
     background-size: 128px;
     border-radius: 4px;
     border-style: solid;
-    border-color: #cccccc;
+    border-color: #ccc;
     border-width: 0 0 1px 0;
     box-shadow: 0 0.2px 0.2px #0000000a, 0 0.5px 0.5px #0000000f, 0 0.9px 0.9px #00000012, 0 1.6px 1.6px #00000015, 0 2.9px 2.9px #0000001a, 0 7px 7px #00000024;
     z-index: 2;
@@ -106,7 +106,7 @@ body {
     background-size: 128px;
     border-radius: 4px;
     border-style: solid;
-    border-color: #cccccc;
+    border-color: #ccc;
     border-width: 0 0 1px 0;
     box-shadow: 0 0.2px 0.2px #0000000a, 0 0.5px 0.5px #0000000f, 0 0.9px 0.9px #00000012, 0 1.6px 1.6px #00000015, 0 2.9px 2.9px #0000001a, 0 7px 7px #00000024;
 }
