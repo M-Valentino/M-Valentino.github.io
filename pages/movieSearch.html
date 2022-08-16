@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<style>
+:root {
+    --color1: #053964;
+    --color2: #fff;
+    --color3: #000;
+    --color4: #76c1ff;
+    --shadow1: 0 0.1px 0.2px rgba(0, 0, 0, 0.048), 0 0.3px 0.5px rgba(0, 0, 2, 0.069), 0 0.6px 0.9px rgba(0, 0, 4, 0.085), 0 1.1px 1.6px rgba(0, 0, 8, 0.101), 0 2.1px 2.9px rgba(0, 0, 16, 0.122), 0 5px 7px rgba(0, 0, 32, 0.17);
+}
+body {
+	background-color: var(--color4);
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+.container {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: var(--color2);
+  text-shadow: 0px 2px 5px rgba(0,0,32,0.3), 0px 1px 2px rgba(0,0,0,0.6);
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  width: 0.5px;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--color2);
+  border-radius: 50%;
+  box-shadow: var(--shadow1);
+}
+.container input:checked ~ .checkmark {
+  background-color: var(--color1);
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--color2);
+}
+@font-face {
+	font-family: "Glyphter";
+	src: url(data:application/octet-stream;base64,d09GRgABAAAAAAQAAAoAAAAABuAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAD4AAABWVrVjZWNtYXAAAAE0AAAATgAAAVoDGgIKZ2x5ZgAAAYQAAACcAAABQL1BCsBoZWFkAAACIAAAAC0AAAA2IJCD52hoZWEAAAJQAAAAGAAAACQIXQQGaG10eAAAAmgAAAAOAAAAFBQAAABsb2NhAAACeAAAAAwAAAAMAKAA8G1heHAAAAKEAAAAHwAAACABEgAkbmFtZQAAAqQAAAE7AAACbdWMZSRwb3N0AAAD4AAAAB0AAAAyAhcCCHicY2BkYWCcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGBwYHBmKWUDcGBaIMCOIAACbdQfOAAB4nGNgYGBmgGAZBkYGEAgB8hjBfBYGCyDNxcDBwASEDAxODLkMxf//g1U5wtj/D/yf9n8iVC8UMLIxUA4YmYhXywwmWahgK9UAAJuHDB8AAHicY2BmAAIWBuaZDKwM3AyCDAymRpqMBoaMSKQD4wEmhj8MyFQG4wzGmQwwvQcY2Bn4GcQZGATFxFlVRVlV4bSZuSorkFZ4wMjAxPAPCLGxGB04LBwagICxAZ3BQBc7GKF2vACGAAOjmDwjL6OwKquwLiMTA5eLP2Pyv7/2/478O2L/7y9jMvNzkd6FRj/+zV+5kjHxhxEA+EhGlXicY2BkYGAAYq+PhzfF89t8ZeBmYQCBezvlG5FpFgbmF0CKg4EJxAMAM2MJyAAAAHicY2BkYGBhAIIYMAliMzKgAlYAC0kAcHicY2FgYGBBwwABBAAVAAAAAAAAAB4AUACCAKB4nGNgZGBgYGWQYGBmAAEmIOYCQgaG/2A+AwALbgE3AHicdY9LTsMwEIZ/9wW0EqqoYIfkBWIBKH2IVTfsmn0X3aet04fSOHLcSj0A5+EInIAj0BtwB37SAaFSYnn8zTeTcQLgAjso7J9L7j0rnDLbcwknuBYu098IV8gPwlU08Chco38SruMeoXADLThOUJUzZnd4FlZo4kW4hHO8Cpfp34Qr5HfhKq7wIVxDU5WF6xiplnADt2oRmtS4yJupHm91mGyzuTfu+xya2TqJ3KEeGZcvbKq7Qeen9HtMvpn1vI917OxKD2zqTZJYnTm7NBMfzL3P+u12LD6Y2BV/3yDldojgeU6hMcaWMUTCM8O88O5PPmScYU0bHake5qMi5ljA8j6NLgJ0jrz139fk2PC2Hq1HzDxmj8WKNCgmfnUnXJYmK2pLmgl9UEz3tH20ueKD/oBdnPQJNGNvpAB4nGNgYoAALgbsgJWBgZGJkZmRhZEVIgAAAzEAJAAAAA==);
+}
+#movieSearch {
+	margin-bottom: 12px;
+	margin-left: 12px;
+	width: calc(100% - 120px);
+	background: var(--color2);
+	border-radius: 4px;
+	padding: 4px;
+    box-shadow: var(--shadow1);
+    border: 2px solid var(--color1);
+}
+input,
+select,
+textarea {
+	color: var(--color3);
+	font-size: 18px;
+}
+#searchButton {
+	color: var(--color2);
+	margin-left: 12px;
+	float: right;
+	margin-right: 12px;
+	background: var(--color1);
+	border-radius: 4px;
+	padding: 4px;
+	font-size: 18px;
+    box-shadow: var(--shadow1);
+    border: 2px solid var(--color1);
+}
+.listing {
+	background: var(--color2);
+	height: 164px;
+	border-radius: 4px;
+	margin: 12px;
+	padding: 10px;
+    box-shadow: var(--shadow1);
+}
+.favorite {
+    text-align: center;
+    color: var(--color2);
+    font-size: 18px;
+    background-color: var(--color1);
+    width: 128px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+    margin-top: 12px;
+    float: right;
+    user-select: none;
+}
+.year:before {
+	content: "Year: ";
+	color: var(--color3);
+}
+.year {
+    margin-top: 12px;
+	color: var(--color1);
+	font-size: 17px;
+	display: inline-block;
+}
+img {
+	float: left;
+	margin-right: 16px;
+	clear: both;
+	height: 90px;
+	border-radius: 2px;
+}
+.iconLink {
+    color: var(--color1);
+    margin: 12px;
+    font-size: 14px;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+	overflow: auto;
+	display: block;
+	color: var(--color3);
+	font-size: 16px;
+	height: 70px;
+}
+h1 {
+	text-align: center;
+	color: var(--color2);
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    text-shadow: 0 0 0 rgb(230,230,230),0px 0.5px 0 rgb(205,205,206),0 1px 0 rgb(180,180,182),0 1.5px  0 rgb(155,155,158), 0 4px 7px rgba(0,0,32,0.3), 0 3px 4px rgba(0,0,0,0.6);
+}
+h2 {
+	color: var(--color1);
+	margin-top: 4px;
+	margin-bottom: 4px;
+	font-size: 19px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.Genre:before {
+	content: "Genre: ";
+	color: var(--color3);
+}
+.Genre {
+	color: var(--color1);
+	font-size: 17px;
+	display: inline-block;
+}
+.starGood {
+	color: var(--color1);
+	font-family: "Glyphter";
+	font-size: 18px;
+	letter-spacing: .1rem;
+	float: right;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    user-select: none;
+}
+.starBad {
+	color: #05396460;
+	float: right;
+	font-family: "Glyphter";
+	font-size: 18px;
+	letter-spacing: .1rem;
+    user-select: none;
+}
+/*Allows more scrolling so that the bottom menu doesn't cover part of the last displayed listing.*/
+.emptyDiv {
+    height: 60px;
+}
+#bottomNav {
+    position: fixed;
+    background-color: var(--color1);
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    margin-top: 60px;
+}
+#bottomNavText {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color2);
+    font-size: 22px;
+}
+@media only screen and (max-width: 364px) {
+    #movieSearch {
+	    margin-bottom: 8px;
+	    margin-left: 8px;
+        width: calc(100% - 100px);
+    }
+    #searchButton {
+        margin-left: 8px;
+	    margin-right: 8px;
+    }
+    .Genre:before {
+	    content: "Genre: ";
+        font-size: 16px;
+    }
+    .year:before {
+        font-size: 16px;
+    }
+    .listing {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 12px;
+        height: 160px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    h2 {
+        font-size: 18px;
+        margin-top: 0;
+	    margin-bottom: 2px;
+    }
+    img {
+        margin-right: 12px;
+        height: 82px;
+    }
+    p {
+        height: 75px;
+    }
+    .starBad {
+        font-size: 16px;
+    }
+    .starGood {
+        font-size: 16px;
+    }
+    .container {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    #bottomNavText {
+        font-size: 20px; 
+    }
+}
+</style>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+	<h1>Movie Search</h1>
+	<input type="search" id="movieSearch" name="q">
+	<button id="searchButton">Search</button>
+    <label class="container">Name
+        <input type="radio" checked="checked" name="radio">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">Genre 
+        <input type="radio" checked="checked" name="radio">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">Year
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+    </label>
+      <label class="container">Rating
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+    </label>
+	<div class="listing"> <img src="movieSearch_files/film-reel.png">
+		<h2>Spaceballs</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tempor urna</p>
+		<div class="Genre">Si-Fi, Comedy</div>
+		<div class="starBad">s</div>
+		<div class="starGood">ssss</div>
+        <!-- below is a 0px high line break. -->
+        <div style="height:0px;"><br></div>
+        <div class="year">1987</div>
+        <div class="favorite">Favorite</div>
+	</div>
+	<div class="listing"> <img src="movieSearch_files/film-reel.png">
+		<h2>Star Wars: Episode V</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tempor urna</p>
+		<div class="Genre">Si-Fi, Action</div>
+		<div class="starBad"></div>
+		<div class="starGood">sssss</div>
+        <div style="height:0px;"><br></div>
+        <div class="year">1980</div>
+        <div class="favorite">Favorite</div>
+	</div>
+	<div class="listing"> <img src="movieSearch_files/film-reel.png">
+		<h2>Star Wars: Episode I</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tempor urna</p>
+		<div class="Genre">Si-Fi, Action</div>
+		<div class="starBad">s</div>
+		<div class="starGood">ssss</div>
+        <div style="height:0px;"><br></div>
+        <div class="year">1999</div>
+        <div class="favorite">Favorite</div>
+	</div>
+    <a class="iconLink" href="https://www.flaticon.com/free-icons/movie" title="movie icons">Movie icons created by Freepik - Flaticon</a>
+    <div class="emptyDiv"></div> 
+    <div id="bottomNav"><div id ="bottomNavText">Find Movies | Favorites | Settings</div> </div>
+</body>
+
+</html>
