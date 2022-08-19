@@ -1,4 +1,4 @@
-/*color pallete: f1e0cb, 744 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 :root {
     --color0: #fff;
     --color1: #6183b7;
@@ -8,7 +8,6 @@
     --splinters: url('data:image/webp;base64,UklGRqIAAABXRUJQVlA4TJUAAAAv/8A/EGDYtm0k7r+8eq8jGEiSZDja692zjcEEwPw//8///2jZeFpMdOUYI6EeCM86KDZCeM6FPQqEFzzIzEB6nQDz//w//8//86Hs4+MplDi4dGClFJvZciBaEfbK5QB4s9cvpQPgTDD/z//z/7s0Y9TGM1JrPC9Vt2MQ5duxCEN7DrnzWePJSB1P62Hizf/z//zfFQA=');
     --smallShadow: 0 0.25px #00000020, 0 0.5px 3px #00000020;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -95,7 +94,7 @@ body {
     padding-top: 8px;
     font-size: 16px;
     text-shadow: var(--smallShadow);
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto';
     line-height: 1.2;
 }
 .mainText {
@@ -114,7 +113,7 @@ body {
 }
 .mainText p {
     font-size: 17px;
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto';
     line-height: 1.2;
     text-shadow: var(--smallShadow);
     margin-left: 12px;
