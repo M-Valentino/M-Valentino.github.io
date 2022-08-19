@@ -174,9 +174,6 @@ li a {
     color: var(--color0);
     text-shadow: #00000025 0 2px 3px, #00000050 0 1px 1px;
 }
-li a:hover:not(.active) {
-    background: radial-gradient(ellipse at 50% 50%, #ffffeb60 0%, #ffffeb40 35%, #00000000 60%);
-}
 .current {
     color: #000;
 }
