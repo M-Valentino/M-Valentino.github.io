@@ -96,6 +96,7 @@ body {
     font-size: 16px;
     text-shadow: var(--smallShadow);
     font-family: Roboto, sans-serif;
+    line-height: 1.2;
 }
 .mainText {
     width: 760px;
@@ -114,6 +115,7 @@ body {
 .mainText p {
     font-size: 17px;
     font-family: Roboto, sans-serif;
+    line-height: 1.2;
     text-shadow: var(--smallShadow);
     margin-left: 12px;
     margin-right: 12px;
