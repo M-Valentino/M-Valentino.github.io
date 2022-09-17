@@ -150,3 +150,23 @@ a {
     padding-right: 4px;
     padding-left: 4px;
 }
+.historyItems::-webkit-scrollbar {
+    display: none;
+  }
+.historyItems {
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+    top: 91px;
+    height: 680px;
+    width: 100%;
+    background-color: #fff;
+}
+.historyItem {
+    margin-top: var(--borderWidth);
+    border-bottom: var(--borderWidth) solid #000;
+    line-height: 1.6;
+    font-size: 24px;
+    padding-left: 7px;
+}
