@@ -117,6 +117,17 @@
 				height: 294px;
 				border: var(--borderWidth) solid #fff;
 			}
+			.readButton {
+				position: absolute;
+				border-top: var(--borderWidth) solid #000;
+				border-right: var(--borderWidth) solid #000;
+				border-top-right-radius: var(--borderWidth);
+				bottom: 0;
+				background-color: #fff;
+				font-size: 24px;
+				padding-right: 4px;
+				padding-left: 4px;
+			}
 		</style>
 	</head>
 	<body>
@@ -127,7 +138,9 @@
 				<div class="innerCircle"></div>
 			</div>
 			<div class="outerBB"></div>
-			<div class="innerBB"></div>
+			<div class="innerBB">
+				<div class="readButton">Read Info</div>
+			</div>
 			<div id="bottomNav">
 				<div class="bottomNavContainer">
 					<div class="navItem">
