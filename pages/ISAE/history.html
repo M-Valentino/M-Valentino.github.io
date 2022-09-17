@@ -2,23 +2,16 @@
 <html>
 	<head>
     	<meta charset="UTF-8">
-		<title>Scanner</title>
+		<title>History</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="styles.css">
 	</head>
+
 	<body>
-		<button onclick="changeEdges()">Toggle rounded screen edges.</button>
-		<div id="scanFrame">
-			<div class="enhanceButton">Enhance ▣</div>
-			<div class="focusButton">
-				<div class="innerCircle"></div>
-			</div>
-			<div class="outerBB"></div>
-			<div class="innerBB">
-				<div class="readButton">Read Info</div>
-			</div>
+        <button onclick="changeEdges()">Toggle rounded screen edges.</button>
+        <div id="frame">
 			<div id="bottomNav">
-				<div class="bottomNavContainer">
+                <div class="bottomNavContainer">
 					<div class="navItem">
 						<!--https://commons.wikimedia.org/wiki/File:QR_icon.svg-->
 						<center><a href="scanner.html"><img src="assets/qr_code.svg"></a></center>
@@ -45,13 +38,12 @@
 			function changeEdges() {
 				if (round == false) {
 					round = true;
-					document.getElementById("scanFrame").style.borderRadius = "50px";
+					document.getElementById("frame").style.borderRadius = "50px";
 				} else {
 					round = false;
-					document.getElementById("scanFrame").style.borderRadius = "0";
+					document.getElementById("frame").style.borderRadius = "0";
 				}
 			}
 		</script>
-	</body>
-
+    </body>
 </html>
