@@ -101,6 +101,14 @@ a {
     border-top-right-radius: var(--borderWidth);
     border-bottom-right-radius: var(--borderWidth);
 }
+.backButton {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 28px;
+    font-weight: 600;
+    font-size: 63px;
+}
 .focusButton {
     position: absolute;
     bottom: 108px;
@@ -169,4 +177,5 @@ a {
     line-height: 1.6;
     font-size: 24px;
     padding-left: 7px;
+    padding-bottom: 5px;
 }
