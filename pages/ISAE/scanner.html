@@ -87,8 +87,19 @@
 				height: 70px;
 				background-color: #fff;
 				border: var(--borderWidth) solid #000;
-				border-radius: 60px;
+				border-radius: 70px;
 				box-shadow: var(--shadow);
+			}
+			.innerCircle {
+				margin: 0;
+  				position: absolute;
+  				top: 50%;
+  				left: 50%;
+				width: 36px;
+				height: 36px;
+  				transform: translate(-50%, -50%);
+				border: var(--borderWidth) solid #000;
+				border-radius: 36px;
 			}
 		</style>
 	</head>
@@ -96,7 +107,9 @@
 		<button onclick="changeEdges()">Toggle rounded screen edges.</button>
 		<div id="frame">
 			<div class="enhanceButton">Enhance ▣</div>
-			<div class="focusButton"></div>
+			<div class="focusButton">
+				<div class="innerCircle"></div>
+			</div>
 			<div id="bottomNav">
 				<div class="bottomNavContainer">
 					<div class="navItem">
