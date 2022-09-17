@@ -1,0 +1,8 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none">
+
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" fill="black" d="m7,7c-2.76142,0 -5,2.23858 -5,5c0,2.7614 2.23858,5 5,5l10,0c2.7614,0 5,-2.2386 5,-5c0,-2.76142 -2.2386,-5 -5,-5c-3.33333,0 -6.66667,0 -10,0zm10,2.5c-1.3807,0 -2.5,1.1193 -2.5,2.5c0,1.3807 1.1193,2.5 2.5,2.5c1.3807,0 2.5,-1.1193 2.5,-2.5c0,-1.3807 -1.1193,-2.5 -2.5,-2.5z" clip-rule="evenodd" fill-rule="evenodd"/>
+  <ellipse stroke-width="0.5" ry="3.88158" rx="4.01316" id="svg_5" cy="12" cx="16.96052" stroke="#ffffff" fill="none"/>
+ </g>
+</svg>

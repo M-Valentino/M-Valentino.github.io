@@ -2,23 +2,39 @@
 <html>
 	<head>
     	<meta charset="UTF-8">
-		<title>Scanner</title>
+		<title>History</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="styles.css">
 	</head>
+
 	<body>
-		<button onclick="changeEdges()">Toggle rounded screen edges.</button>
-		<div id="scanFrame">
-			<div class="enhanceButton" onclick="enhance()">Enhance ▣</div>
-			<div class="focusButton">
-				<div class="innerCircle"></div>
-			</div>
-			<div class="outerBB"></div>
-			<div class="innerBB">
-				<div class="readButton">Read Info</div>
-			</div>
+        <button onclick="changeEdges()">Toggle rounded screen edges.</button>
+        <div id="frame">
+            <div class="backButton">⇦</div>
+            <div class="whiteBar">
+                <h1>Settings</h1>
+            </div>
+            <div class="historyItems">
+                <div class="historyItem">
+                    <b>General</b>
+                    <br>
+                    Clear Scan History <img src="assets/toggle.svg" height="80px">
+                    <br>
+                    <br>
+                    Beep <img src="assets/toggle.svg" height="80px">
+                    <br>
+                    <br>
+                    Vibrate <img src="assets/toggle.svg" height="80px">
+                    <br>
+                    <br>
+                    Audio Cues <img src="assets/toggle.svg" height="80px">
+                    <br>
+                    <br>
+                </div>
+                
+            </div>
 			<div id="bottomNav">
-				<div class="bottomNavContainer">
+                <div class="bottomNavContainer">
 					<div class="navItem">
 						<!--https://commons.wikimedia.org/wiki/File:QR_icon.svg-->
 						<center><a href="scanner.html"><img src="assets/qr_code.svg"></a></center>
@@ -41,28 +57,16 @@
 		
 		<script>
 			let round = true;
-			let enhanced = false; 
 
 			function changeEdges() {
 				if (round == false) {
 					round = true;
-					document.getElementById("scanFrame").style.borderRadius = "50px";
+					document.getElementById("frame").style.borderRadius = "50px";
 				} else {
 					round = false;
-					document.getElementById("scanFrame").style.borderRadius = "0";
-				}
-			}
-
-			function enhance() {
-				if (enhanced == false) {
-					enhanced = true;
-					document.getElementById("scanFrame").style.backgroundImage = "url(assets/jiff_enhanced.png)";
-				} else {
-					enhanced = false;
-					document.getElementById("scanFrame").style.backgroundImage = "url(assets/jif.jpeg)";
+					document.getElementById("frame").style.borderRadius = "0";
 				}
 			}
 		</script>
-	</body>
-
+    </body>
 </html>
