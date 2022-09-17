@@ -27,6 +27,8 @@
 				margin: auto;
 				overflow: hidden;
 				border-radius: 50px;
+				background-image: url(assets/jif.jpeg);
+				background-size: cover;
 			}
 			#bottomNav {
 				z-index: 1;
@@ -57,10 +59,15 @@
 				color: #000;
     			font-size: 22px;
 			}
+			.navItem img {
+				width: 46px;
+				transform: translateY(3.5px);
+			}
 			.enhanceButton {
 				position: relative;
 				top: 50px;
 				left: 0;
+				background-color: #fff;
 				border-top: var(--borderWidth) solid #000;
 				border-right: var(--borderWidth) solid #000;
 				border-bottom: var(--borderWidth) solid #000;
@@ -69,6 +76,8 @@
 				font-size: 24px;
 				display: inline-block;
 				box-shadow: var(--shadow);
+				border-top-right-radius: var(--borderWidth);
+				border-bottom-right-radius: var(--borderWidth);
 			}
 			.focusButton {
 				position: absolute;
@@ -91,18 +100,18 @@
 			<div id="bottomNav">
 				<div class="bottomNavContainer">
 					<div class="navItem">
-						▣
-						<br>
+						<!--https://commons.wikimedia.org/wiki/File:QR_icon.svg-->
+						<center><img src="assets/qr_code.svg"></center>
 						Scanner
 					</div>
 					<div class="navItem">
-						▣
-						<br>
+						<!--https://en.wikipedia.org/wiki/File:Clock_%2889654%29_-_The_Noun_Project.svg-->
+						<center><img src="assets/clock.svg"></center>
 						History
 					</div>
 					<div class="navItem">
-						▣
-						<br>
+						<!--https://en.wikipedia.org/wiki/File:Wikipedia_interwiki_section_gear_icon.svg-->
+						<center><img src="assets/gear.svg"></center>
 						Settings
 					</div>
 				</div>
