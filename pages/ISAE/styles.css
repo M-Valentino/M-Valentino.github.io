@@ -87,7 +87,6 @@ a {
     transform: translateY(3.5px);
 }
 .enhanceButton {
-    display: hidden;
     position: relative;
     top: 50px;
     left: 0;
