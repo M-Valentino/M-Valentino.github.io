@@ -10,6 +10,8 @@
     <style>
         body {
             background-color: antiquewhite;
+            margin: 0;
+            padding: 0;
         }
         .clockFace {
             width: 400px;
@@ -20,14 +22,29 @@
             border: 10px solid #000;
         }
         .hourHandContainer {
-            position: relative;
-            width: 5px;
-            height: 360px;
-            margin: auto;
-            top: 20px;
+            position: absolute;
+            width: 6px;
+            height: 300px;
+            left: calc(50% - 3px);
+            top: 60px;
             transform: rotate(20deg);
+            background-color: aqua;
         }
         .hourHand {
+            background-color: #000;
+            width: 100%;
+            height: 50%;
+        }
+        .minuteHandContainer {
+            position: absolute;
+            width: 5px;
+            height: 380px;
+            left: calc(50% - 2.5px);
+            top: 20px;
+            transform: rotate(0deg);
+            background-color: red;
+        }
+        .minuteHand {
             background-color: #000;
             width: 100%;
             height: 50%;
@@ -39,6 +56,9 @@
     <div class ="clockFace">
         <div class="hourHandContainer">
             <div class="hourHand"></div>
+        </div>
+        <div class="minuteHandContainer">
+            <div class="minuteHand"></div>
         </div>
     </div>
     
