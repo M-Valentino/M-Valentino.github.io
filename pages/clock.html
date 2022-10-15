@@ -7,92 +7,155 @@
 	<meta name="keywords" content="Clock, analog">
 	<meta name="author" content="Mark Valentino">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="5">
     <style>
+
         body {
-            background-color: antiquewhite;
+            background-color: #eee;
             margin: 0;
             padding: 0;
+            transform: rotateX(25deg);
         }
         .clockFace {
             position: relative;
             width: 400px;
             height: 400px;
             border-radius: 400px;
-            background-color: #fff;
+            background-color: #f5f5f5;
             top: 30px;
             margin: auto;
-            border: 10px solid #000;
+            border: 10px solid #222;
+            box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.12) inset, 0px 16px 5px 0px rgba(0,0,0,0.08) inset, 0px -40px 100px 0px rgba(255,255,255,1) inset, 0px -16px 7px 0px rgba(0,0,0,0.7) inset;
         }
-        .n9 {
+        .clockRidge {
             position: absolute;
-            bottom: 50%;
-            left: calc(50% - 9px - 180px);
+            width: 400px;
+            height: 400px;
+            border-radius: 400px;
+            background-color: #00000000;
+            top: 20.5px;
+            left: calc(50% - 210px);
+            border: 10px solid #444;
+            z-index: 5;
+        }
+        .clockBottom {
+            position: absolute;
+            width: 420px;
+            height: 230px;
+            border-bottom-left-radius: 420px;
+            border-bottom-right-radius: 420px;
+            background-color: #222;
+            top: 240px;
+            left: calc(50% - 210px);
+            z-index: -5;
+        }
+        .n3 {
+            position: absolute;
+            bottom: calc(50% - 24px);
+            right: calc(50% - 9px - 180px);
             text-align: center;
-            color: #000;
+            color: #333;
             font-weight: 200;
             font-size: 36px;
+            text-shadow: 0 0.25px #00000020, 0 0.5px 3px #00000020;
         }
         .n6 {
             position: absolute;
             bottom: 5px;
             left: calc(50% - 9px);
             text-align: center;
-            color: #000;
+            color: #333;
             font-weight: 200;
             font-size: 36px;
+            text-shadow: 0 0.25px #00000020, 0 0.5px 3px #00000020;
+        }
+        .n9 {
+            position: absolute;
+            bottom: calc(50% - 24px);
+            left: calc(50% - 9px - 180px);
+            text-align: center;
+            color: #333;
+            font-weight: 200;
+            font-size: 36px;
+            text-shadow: 0 0.25px #00000020, 0 0.5px 3px #00000020;
         }
         .n12 {
             position: absolute;
             top: 5px;
             left: calc(50% - 18px);
             text-align: center;
-            color: #000;
+            color: #333;
             font-weight: 200;
             font-size: 36px;
+            text-shadow: 0 0.25px #00000020, 0 0.5px 3px #00000020;
         }
-        .hourHandContainer {
+        #hourHandContainer {
             position: absolute;
             width: 6px;
-            height: 300px;
+            height: 280px;
             left: calc(50% - 3px);
-            top: 50px;
+            top: 60px;
             transform: rotate(20deg);
-            background-color: aqua;
         }
         .hourHand {
-            background-color: #222;
+            background-color: #444;
             width: 100%;
             height: 50%;
+            box-shadow: 0 0 4px 2px rgba(0,0,0,0.1);
         }
-        .minuteHandContainer {
+        #minuteHandContainer {
             position: absolute;
             width: 5px;
-            height: 380px;
+            height: 360px;
             left: calc(50% - 2.5px);
-            top: 10px;
+            top: 20px;
             transform: rotate(0deg);
-            background-color: red;
         }
         .minuteHand {
-            background-color: #222;
+            background-color: #444;
             width: 100%;
             height: 50%;
+            box-shadow: 0 0 4px 2px rgba(0,0,0,0.1);
+        }
+        .centerCircle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background-color: #444;
+            box-shadow: 0 0 4px 2px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            z-index: 10;
         }
     </style>
 </head>
 
 <body>
+    <div class="clockRidge"></div>
     <div class ="clockFace">
         <div class="n12">12</div>
         <div class="n9">9</div>
         <div class="n6">6</div>
-        <div class="hourHandContainer">
+        <div class="n3">3</div>
+        <div class="centerCircle"></div>
+        <div id="hourHandContainer">
             <div class="hourHand"></div>
         </div>
-        <div class="minuteHandContainer">
+        <div id="minuteHandContainer">
             <div class="minuteHand"></div>
         </div>
     </div>
-    
+    <div class="clockBottom"></div>
+    <script type = "text/javascript">
+        var dt = new Date();
+        let hoursRot = (dt.getHours() * 30);
+        let mintutesRot = (dt.getMinutes() * 6);
+        document.getElementById("minuteHandContainer").style.transform = 'rotate('+mintutesRot+'deg)';
+        document.getElementById("hourHandContainer").style.transform = 'rotate('+hoursRot+'deg)';
+        console.log(hoursRot);
+        
+     </script>  
 </body>
 </html>
