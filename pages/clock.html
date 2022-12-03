@@ -159,7 +159,6 @@
     <p id="tz"></p>
 
     <script type = "text/javascript">
-        //let time_zone = Intl.DateTimeFormat().resolvedOptions().timeZone
         document.getElementById("tz").innerHTML = "Your time zone is " + Intl.DateTimeFormat().resolvedOptions().timeZone + ".";
         function moveHands() {
             var dt = new Date();
