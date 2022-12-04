@@ -7,11 +7,13 @@
 		<meta name="author" content="Mark Valentino">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
-			body {
-				background-color: #ddd;
+
+			body, html {
 				margin: 0;
 				font-family: Arial, Helvetica, sans-serif;
 				text-rendering: optimizeLegibility;
+				background-image: linear-gradient(#dddddd, #d7d7d7);
+				background-attachment: fixed;
 			}
 			p {
 				margin-right: 24px;
@@ -52,6 +54,7 @@
 			<p id="tz"></p>
 			<p id="seconds"></p>
 			<p id="dimensions"></p>
+			<p id="monitor"></p>
 			<p id="OS"></p>
 			<p id="visits"></p>
 			<p id="clickCoordinates"><b>You haven't clicked anywhere on the page.</b></p>
@@ -60,7 +63,7 @@
 			<p id="tab">This page has been the active tab since you opened it up.</p>
 			<p id="adBlock">You <b>don't have ad blocking</b> enabled.</p>
 			<p id="language"></p>
-			<p id="monitor"></p>
+			<p id="battery">Your browser has no capaility to access your device's battery charge amount.</p>
 		</section>
 		<script type="text/javascript">
 			let firstLoadTime = new Date().getTime();;
@@ -78,11 +81,12 @@
 			function windowDimensionsTrack() {
 				height = window.innerHeight;
 				width = window.innerWidth;
-				document.getElementById("dimensions").innerHTML = "Your browser window dimensions are <b> " + Math.round(width * window.devicePixelRatio)+ "x" + Math.round(height * window.devicePixelRatio) + "</b>.";
+				document.getElementById("dimensions").innerHTML = "Your browser window dimensions are <b> " + Math.round(width * window.devicePixelRatio)+ "x" + Math.round(height * window.devicePixelRatio) + " pixels</b>.";
 			}
 			setInterval(windowDimensionsTrack, 500);
 			windowDimensionsTrack();
 
+			document.getElementById("monitor").innerHTML = "Your screen resolution is around <b>" + Math.round(screen.availWidth * window.devicePixelRatio) + "x" + Math.round(screen.availHeight * window.devicePixelRatio) + " pixels</b>.";
 			document.getElementById("tz").innerHTML = "Your time zone is <b>" + Intl.DateTimeFormat().resolvedOptions().timeZone + "</b>.";
 			let agent = navigator.userAgent;
 			document.getElementById("OS").innerHTML = "Your hardware and browser info: <b>" + agent + "</b>";
@@ -120,12 +124,10 @@
 			detectAdBlocker();
 
 			document.getElementById("language").innerHTML = "This is your browser's language: <b>" + navigator.language + "</b>.";
-			document.getElementById("monitor").innerHTML = "Your screen resolution is around <b>" + Math.round(screen.availWidth * window.devicePixelRatio) + "x" + Math.round(screen.availHeight * window.devicePixelRatio) + " pixels</b>.";
 
-			navigator.getBattery()
-  			.then(function(battery) {
-    		console.log(battery.level);
-			});
+			navigator.getBattery().then(function(battery) {
+				document.getElementById("battery").innerHTML = "Your device's battery level is at <b>" + (battery.level * 100) + "%</b>."
+			})
 		</script>
 	</body>
 </html>
