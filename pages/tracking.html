@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html onclick="displayClickCoordinates(event)">
+	<head>
+		<meta charset="UTF-8">
+		<title>What can JavaScript track?</title>
+		<meta name="keywords" content="Clock, analog">
+		<meta name="author" content="Mark Valentino">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body {
+				background-color: #ddd;
+				margin: 0;
+				font-family: Arial, Helvetica, sans-serif;
+				text-rendering: optimizeLegibility;
+			}
+			p {
+				margin-right: 24px;
+				margin-left: 24px;
+			}
+			h1 {
+				text-shadow: 0 0.25px #00000020, 0 0.5px 2px #00000020;
+				margin-right: 24px;
+				margin-left: 24px;
+				margin-top: 0;
+				margin-bottom: 24px;
+			}
+			section {
+				margin: auto;
+				margin-top: 24px;
+				width: 60%;
+				background-color: #fff;
+				padding-top: 24px;
+				padding-bottom: 24px;
+				border-radius: 24px;
+				box-shadow: 0 2.5px 3.6px #00000004, 0 7px 10px #00000005, 0 16.9px 24.1px #00000007, 0 56px 80px #0000000a;
+			}
+			@media only screen and (max-width: 1024px) {
+				section {
+					width: 80%;
+				}
+			}
+			@media only screen and (max-width: 658px) {
+				section {
+					width: 100%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h1>What can JavaScript track?</h1>
+			<p id="tz"></p>
+			<p id="seconds"></p>
+			<p id="dimensions"></p>
+			<p id="OS"></p>
+			<p id="visits"></p>
+			<p id="clickCoordinates"><b>You haven't clicked anywhere on the page.</b></p>
+			<p id="CPU"></p>
+			<p id="tab">This page has been the active tab since you opened it up.</p>
+			<p id="adBlock">You <b>don't have ad blocking</b> enabled.</p>
+			<p id="language"></p>
+			<p id="monitor"></p>
+		</section>
+		<script type="text/javascript">
+			let firstLoadTime = new Date().getTime();;
+			let height = window.innerHeight;
+			let width = window.innerWidth;
+			let JSONresponse = ""
+
+			function secondsTrack() {
+				let currentTime = new Date().getTime();
+				document.getElementById("seconds").innerHTML = "You have been on this page for  <b>" + (currentTime - firstLoadTime) + " miliseconds</b>.";
+			}
+			setInterval(secondsTrack, 200);
+			secondsTrack();
+
+			function windowDimensionsTrack() {
+				height = window.innerHeight;
+				width = window.innerWidth;
+				document.getElementById("dimensions").innerHTML = "Your browser window dimensions are <b> " + Math.round(width * window.devicePixelRatio)+ "x" + Math.round(height * window.devicePixelRatio) + "</b>.";
+			}
+			setInterval(windowDimensionsTrack, 500);
+			windowDimensionsTrack();
+
+			document.getElementById("tz").innerHTML = "Your time zone is <b>" + Intl.DateTimeFormat().resolvedOptions().timeZone + "</b>.";
+			let agent = navigator.userAgent;
+			document.getElementById("OS").innerHTML = "Your hardware and browser info: <b>" + agent + "</b>";
+
+			function displayClickCoordinates(event) {
+         		let xPos = Math.round(event.clientX * window.devicePixelRatio);
+				let yPos = Math.round(event.clientY * window.devicePixelRatio);
+				document.getElementById("clickCoordinates").innerHTML = "You last clicked at position: <b>(" + xPos + ", " + yPos + ")</b>.";
+      		}
+
+			document.getElementById("CPU").innerHTML = "You have <b>" +navigator.hardwareConcurrency + " CPU cores</b>.";
+
+			function checkDocumentHidden() {
+				if (document.hidden) {
+    				document.getElementById("tab").innerHTML = "<b>You looked at another webpage in another tab while you had this page open.</b>";
+				}
+			}
+			setInterval(checkDocumentHidden, 150);
+			checkDocumentHidden();
+
+			async function detectAdBlocker() {
+  				try {
+    				await fetch(new Request('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')).catch()
+  				} catch (e) {
+    				document.getElementById("adBlock").innerHTML = "You <b>have ad blocking</b> enabled.";
+  				}
+			}
+			detectAdBlocker();
+
+			document.getElementById("language").innerHTML = "This is your browser's language: <b>" + navigator.language + "</b>.";
+			document.getElementById("monitor").innerHTML = "Your screen resolution is around <b>" + Math.round(screen.availWidth * window.devicePixelRatio) + "x" + Math.round(screen.availHeight * window.devicePixelRatio) + " pixels</b>."
+		</script>
+	</body>
+</html>
